@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Examen Primera Parcial</string>
+    <string name="title_lbl_tag">Android Trivia</string>
+    <string name="title_input_welcome_lbl_tag">Welcome, you wanna play</string>
+    <string name="placeholder_input_welcome_lbl_tag">Give me your name</string>
+    <string name="question_1_lbl_tag">Google play es una tienda oficial de?</string>
+    <string name="answer_1_question_1_lbl_tag">Android</string>
+    <string name="answer_2_question_1_lbl_tag">iOS</string>
+    <string name="answer_3_question_1_lbl_tag">Blackberry</string>
+    <string name="question_2_lbl_tag">Como se les conoce a las aplicaciones que se desarrollan especificamente para cada sistema operativo?</string>
+    <string name="answer_1_question_2_lbl_tag">Nativas</string>
+    <string name="answer_2_question_2_lbl_tag">Hibridas</string>
+    <string name="answer_3_question_2_lbl_tag">Web</string>
+    <string name="question_3_lbl_tag">como se llama el freamwork de java que se utiliza par android studio?</string>
+    <string name="answer_1_question_3_lbl_tag">React Native</string>
+    <string name="answer_2_question_3_lbl_tag">Kotlin</string>
+    <string name="answer_3_question_3_lbl_tag">Flutter</string>
+    <string name="start_lbl_tag">Comenzar</string>
+
+</resources>
