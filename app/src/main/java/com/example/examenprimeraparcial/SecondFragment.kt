@@ -34,7 +34,7 @@ class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        questions = ArrayList()
         var answers:ArrayList<Answer> = ArrayList()
         answers.add(Answer(getString(R.string.answer_1_question_1_lbl_tag),true))
         answers.add(Answer(getString(R.string.answer_2_question_1_lbl_tag),false))
@@ -53,7 +53,7 @@ class SecondFragment : Fragment() {
         answers.add(Answer(getString(R.string.answer_3_question_3_lbl_tag),false))
         question = Question(getString(R.string.question_3_lbl_tag),answers)
         questions.add(question)
-
+        showQuestion(indexQuestion)
 
         binding.answer1.setOnClickListener {
             if (indexQuestion == 0) {
@@ -67,6 +67,8 @@ class SecondFragment : Fragment() {
             if (indexQuestion == 2) {
                 print("Incorrecta")
             }
+            indexQuestion++
+            showQuestion(indexQuestion)
         }
 
         binding.answer2.setOnClickListener {
@@ -81,6 +83,8 @@ class SecondFragment : Fragment() {
             if (indexQuestion == 2) {
                 print("Correcta")
             }
+            indexQuestion++
+            showQuestion(indexQuestion)
         }
 
         binding.answer3.setOnClickListener {
@@ -95,6 +99,17 @@ class SecondFragment : Fragment() {
             if (indexQuestion == 2) {
                 print("Incorrecta")
             }
+            indexQuestion++
+            showQuestion(indexQuestion)
+        }
+
+    }
+
+    fun showQuestion( index:Int) {
+        if (indexQuestion < 3) {
+            binding.questionLbl.text = questions.get(indexQuestion).title
+        } else {
+            print("ir a la ultima vista")
         }
 
     }
