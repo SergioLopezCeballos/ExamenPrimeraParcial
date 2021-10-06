@@ -36,23 +36,28 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         questions = ArrayList()
         var answers:ArrayList<Answer> = ArrayList()
+        var question:Question
+
         answers.add(Answer(getString(R.string.answer_1_question_1_lbl_tag),true))
         answers.add(Answer(getString(R.string.answer_2_question_1_lbl_tag),false))
         answers.add(Answer(getString(R.string.answer_3_question_1_lbl_tag),false))
-        var question:Question = Question(getString(R.string.question_1_lbl_tag),answers)
+        question = Question(getString(R.string.question_1_lbl_tag),answers)
         questions.add(question)
-        answers.clear()
+
+        answers = ArrayList()
         answers.add(Answer(getString(R.string.answer_1_question_2_lbl_tag),true))
         answers.add(Answer(getString(R.string.answer_2_question_2_lbl_tag),false))
         answers.add(Answer(getString(R.string.answer_3_question_2_lbl_tag),false))
         question = Question(getString(R.string.question_2_lbl_tag),answers)
         questions.add(question)
-        answers.clear()
+
+        answers = ArrayList()
         answers.add(Answer(getString(R.string.answer_1_question_3_lbl_tag),false))
         answers.add(Answer(getString(R.string.answer_2_question_3_lbl_tag),true))
         answers.add(Answer(getString(R.string.answer_3_question_3_lbl_tag),false))
         question = Question(getString(R.string.question_3_lbl_tag),answers)
         questions.add(question)
+
         showQuestion(indexQuestion)
 
         binding.answer1.setOnClickListener {
@@ -107,7 +112,11 @@ class SecondFragment : Fragment() {
 
     fun showQuestion( index:Int) {
         if (indexQuestion < 3) {
+            binding.countQuestionLbl.text = (indexQuestion + 1).toString() + "/3"
             binding.questionLbl.text = questions.get(indexQuestion).title
+            binding.answer1.text = questions.get(indexQuestion).answers.get(0).title
+            binding.answer2.text = questions.get(indexQuestion).answers.get(1).title
+            binding.answer3.text = questions.get(indexQuestion).answers.get(2).title
         } else {
             print("ir a la ultima vista")
         }
